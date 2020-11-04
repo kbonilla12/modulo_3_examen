@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Newman Test case') {
+        stage('Newman Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     sh '''
@@ -13,7 +13,7 @@ pipeline {
                 }
             }
         }
-        stage('RestAssured Test Case') {
+        stage('RestAssured Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     sh '''
@@ -25,7 +25,7 @@ pipeline {
                 }
             }              
         }
-        stage('Jmeter Test Case') {
+        stage('Jmeter Test') {
             steps {
                 sh '''
                 cd load
